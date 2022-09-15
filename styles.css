@@ -1,0 +1,31 @@
+body {
+    counter-reset: section;
+}
+
+.privacidade h2::before {
+    counter-increment: section;
+    content: counter(section) '. ';
+}
+
+.privacidade ol {
+    list-style-type: none;
+    counter-reset: subsection;
+}
+
+.privacidade ol > li {
+    counter-increment: subsection;
+}
+
+.privacidade ol > li:before {
+    content: counter(section) '.' counters(subsection, '.  ') '.  ';
+}
+
+table.tabela,
+.tabela th,
+.tabela td {
+    border: 1px solid black;
+    background-color: rgb(227, 227, 227);
+    border-collapse: collapse;
+    text-align: left;
+    padding: 10px;
+}
